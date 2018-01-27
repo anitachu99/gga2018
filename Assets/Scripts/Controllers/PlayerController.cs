@@ -5,6 +5,8 @@ using UnityEngine;
 namespace boc {
 	public class PlayerController : MonoBehaviour {
 		[SerializeField]
+		private Transform pivot;
+		[SerializeField]
 		private float speed = 3;
 
 		[SerializeField]
@@ -25,10 +27,15 @@ namespace boc {
 			if (!isActive) { return; }
 			float horizontal = Input.GetAxis (horizontalName);
 			float vertical = Input.GetAxis (verticalName);
+
 			float gravity = 0;
-			if (!controller.isGrounded) { gravity = -9.81f; }
+			if (!controller.isGrounded) {
+				gravity = -9.81f;
+			}
+
 			Vector3 direction = new Vector3 (horizontal, gravity, vertical);
 			controller.Move (direction * Time.deltaTime * speed);
+			pivot.LookAt (transform.position + new Vector3 (horizontal, 0, vertical));
 		}
 
 	}
