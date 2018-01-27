@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace boc {
 	public class PlayerController : MonoBehaviour {
+		[SerializeField]
+		private float speed = 3;
 
 		[SerializeField]
 		private bool isActive;
@@ -21,6 +23,10 @@ namespace boc {
 
 		private void Update () {
 			if (!isActive) { return; }
+			float horizontal = Input.GetAxis (horizontalName);
+			float vertical = Input.GetAxis (verticalName);
+			Vector3 direction = new Vector3 (horizontal, 0, vertical);
+			controller.Move (direction * Time.deltaTime * speed);
 		}
 
 	}
