@@ -17,9 +17,13 @@ namespace boc {
 		}
 
 		public void Register (Action handler) {
-			// Make sure a handler is only run once.
-			if (!OnGameEventInvoke.GetInvocationList ().Contains (handler))
-				OnGameEventInvoke += handler;
+			OnGameEventInvoke -= handler;
+			OnGameEventInvoke += handler;
+			// if (OnGameEventInvoke != null) {
+			// 	// Make sure a handler is only run once.
+			// 	if (!OnGameEventInvoke.GetInvocationList ().Contains (handler))
+			// 		OnGameEventInvoke += handler;
+			// }
 		}
 
 		public void Unregister (Action handler) {
