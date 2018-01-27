@@ -5,6 +5,8 @@ using UnityEngine;
 namespace boc {
 	public class PlayerController : MonoBehaviour {
 		[SerializeField]
+		private float turnSpeed = 6;
+		[SerializeField]
 		private Transform pivot;
 		[SerializeField]
 		private float speed = 3;
@@ -35,7 +37,11 @@ namespace boc {
 
 			Vector3 direction = new Vector3 (horizontal, gravity, vertical);
 			controller.Move (direction * Time.deltaTime * speed);
-			pivot.LookAt (transform.position + new Vector3 (horizontal, 0, vertical));
+			// pivot.LookAt (transform.position + new Vector3 (horizontal, 0, vertical));
+			Vector3 lookDirection = new Vector3 (horizontal, 0, vertical);
+			if (lookDirection.magnitude > 0) {
+				pivot.rotation = Quaternion.Slerp (pivot.rotation, Quaternion.LookRotation (lookDirection), Time.deltaTime * turnSpeed);
+			}
 		}
 
 	}
