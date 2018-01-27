@@ -4,11 +4,14 @@ using UnityEngine;
 
 namespace boc {
 	public class Health : MonoBehaviour, IHealth {
-		[SerializeField] private float InitialHP = 100;
+		[SerializeField] private float InitialMaxHP = 100;
 		[SerializeField] private GameEvent DeathEvent;
 		public float CurrentHP { get; private set; }
 		public float MaxHP {
-			get { return InitialHP; }
+			get { return InitialMaxHP; }
+		}
+		void Start () {
+			CurrentHP = InitialMaxHP;
 		}
 		public void Heal (float amount) {
 			CurrentHP = Mathf.Min (CurrentHP + amount, MaxHP);
