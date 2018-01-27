@@ -25,7 +25,9 @@ namespace boc {
 			if (!isActive) { return; }
 			float horizontal = Input.GetAxis (horizontalName);
 			float vertical = Input.GetAxis (verticalName);
-			Vector3 direction = new Vector3 (horizontal, 0, vertical);
+			float gravity = 0;
+			if (!controller.isGrounded) { gravity = -9.81f; }
+			Vector3 direction = new Vector3 (horizontal, gravity, vertical);
 			controller.Move (direction * Time.deltaTime * speed);
 		}
 
