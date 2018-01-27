@@ -5,12 +5,23 @@ using UnityEngine.Assertions;
 
 namespace boc.Server {
 
+	public delegate void Event1Handler ();
+	public delegate void Event2Handler ();
+	public delegate void Event3Handler ();
+	public delegate void ResetAllEventHandler ();
+
 	public class ClientServerIntegration : MonoBehaviour {
+
+		public static event Event1Handler OnResetEvent1;
+		public static event Event2Handler OnResetEvent2;
+		public static event Event3Handler OnResetEvent3;
+		public static event ResetAllEventHandler OnResetEvents;
 
 		public EventData EventData { get { return EventData.CreateFromJSON (eventData); } }
 		public string Event1URL { get { return string.Format ("{0}/{1}-{2}", hostURL, resetURLPrefix, event1URL); } }
 		public string Event2URL { get { return string.Format ("{0}/{1}-{2}", hostURL, resetURLPrefix, event2URL); } }
 		public string Event3URL { get { return string.Format ("{0}/{1}-{2}", hostURL, resetURLPrefix, event3URL); } }
+		public string ResetAllURL { get { return string.Format ("{0}/{1}{2}", hostURL, resetURLPrefix, "-all-events"); } }
 
 		private const string resetURLPrefix = "_reset";
 
@@ -28,6 +39,20 @@ namespace boc.Server {
 		private EventDataStorage eventDataStorage;
 
 		private string eventData;
+
+		private void OnEnable () {
+			OnResetEvent1 += InvokeEvent1Reset;
+			OnResetEvent2 += InvokeEvent2Reset;
+			OnResetEvent3 += InvokeEvent3Reset;
+			OnResetEvents += InvokeResetAllEvents;
+		}
+
+		private void OnDisable () {
+			OnResetEvent1 -= InvokeEvent1Reset;
+			OnResetEvent2 -= InvokeEvent2Reset;
+			OnResetEvent3 -= InvokeEvent3Reset;
+			OnResetEvents -= InvokeResetAllEvents;
+		}
 
 		private void Start () {
 			Assert.IsFalse (string.IsNullOrEmpty (hostURL), "Server URL does not exist!");
@@ -65,6 +90,22 @@ namespace boc.Server {
 		/// <param name="url">The URL to invoke</param>
 		public void InvokeResetEvent (string url) {
 			StartCoroutine (ResetEvent (url));
+		}
+
+		public void InvokeEvent1Reset () {
+			InvokeResetEvent (Event1URL);
+		}
+
+		public void InvokeEvent2Reset () {
+			InvokeResetEvent (Event2URL);
+		}
+
+		public void InvokeEvent3Reset () {
+			InvokeResetEvent (Event3URL);
+		}
+
+		public void InvokeResetAllEvents () {
+			InvokeResetEvent (ResetAllURL);
 		}
 
 	}
