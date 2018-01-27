@@ -19,6 +19,8 @@ namespace boc {
 		[SerializeField]
 		private string verticalName = "Vertical";
 
+		public float Speed { get { return speed; } set { speed = value; } }
+
 		private CharacterController controller;
 
 		private void Awake () {

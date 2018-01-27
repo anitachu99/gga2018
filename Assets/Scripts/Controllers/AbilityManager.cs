@@ -9,7 +9,7 @@ namespace boc {
 		// Use this for initialization
 		void Start () {
 			for (int i = 0; i < abilities.Count; ++i) {
-				abilities[i].OnAbilityStart ();
+				abilities[i].OnAbilityStart(gameObject);
 
 			}
 		}
@@ -17,20 +17,20 @@ namespace boc {
 		// Update is called once per frame
 		void Update () {
 			for (int i = 0; i < abilities.Count; ++i) {
-				abilities[i].OnAbilityUpdate ();
+				abilities[i].OnAbilityUpdate (gameObject);
 			}
 		}
 		public void AddAbility (Ability ability) {
 			abilities.Add (ability);
-			ability.OnAbilityStart ();
+			ability.OnAbilityStart (gameObject);
 		}
 		public void RemoveAbility (Ability ability) {
 			abilities.Remove (ability);
-			ability.OnAbilityEnd ();
+			ability.OnAbilityEnd (gameObject);
 		}
 		private void OnDisable () {
 			for (int i = 0; i < abilities.Count; ++i) {
-				abilities[i].OnAbilityEnd ();
+				abilities[i].OnAbilityEnd (gameObject);
 			}
 		}
 	}
