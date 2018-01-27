@@ -340,3 +340,7 @@ __pycache__/
 
 # OSX
 *.DS_Store
+#.Tests
+Assets/Tests
+Assets/Tests.meta
+.vscode/
