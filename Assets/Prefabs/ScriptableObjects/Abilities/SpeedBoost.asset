@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4616431bddf66fc4db63f99ea790e0d9, type: 3}
   m_Name: SpeedBoost
   m_EditorClassIdentifier: 
+  duration: 5
+  cooldown: 10
   speedmultiplier: 5
-  abilityduration: 5
-  cooldown: 5
   abilityKey: 373

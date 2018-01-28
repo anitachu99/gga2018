@@ -103,11 +103,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1222305503134136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efb3179acfbbb0d4eaad0373e0daf1ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 4488c884caf8d1f40bb8e16297c6dc00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: a4e9d95c03ac3f344bdc554255835b8a, type: 2}
-  cooldownImage: {fileID: 114213129914588844}
+  ability: {fileID: 11400000, guid: 6d63e18ded4f2b040b8478e7852f9b02, type: 2}
   abilityImage: {fileID: 114394352818381874}
   bounceScale: {x: 1.1, y: 1.1, z: 1.1}
   bounceDuration: 1
@@ -163,8 +162,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 84a97e225d61e0f40a5e8fe8b2edcacb, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: 0e04600e4fbcf2c4999fdad45d5595df, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -190,7 +189,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 84a97e225d61e0f40a5e8fe8b2edcacb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e04600e4fbcf2c4999fdad45d5595df, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -217,7 +216,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 637bb6796154da446bd3a92f7e42e672, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f909753524f3c4d4caf5b15e51fdc885, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -293,7 +292,7 @@ RectTransform:
   m_GameObject: {fileID: 1344205033818986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.999983, y: 0.999983, z: 0.999983}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224981510680849656}
   m_RootOrder: 1

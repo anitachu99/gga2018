@@ -180,7 +180,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 414e943ecfadf854b888613d22b57b9b, type: 2}
+  - {fileID: 2100000, guid: 16fa238cfd17541469b66db4857e39cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -215,8 +215,7 @@ AudioSource:
   m_GameObject: {fileID: 1092932770824846}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243324490101130852, guid: e43940b662b854040bd188d064ae40c6,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -296,19 +295,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1092932770824846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cafb350ae70e863438e4210720946a3f, type: 3}
+  m_Script: {fileID: 11500000, guid: 780172f91fe46314d8e2a5310db8eec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lasers:
-  - eye: {fileID: 4487749890983498}
-    renderer: {fileID: 120838326506894078}
-  - eye: {fileID: 4291936990375666}
-    renderer: {fileID: 120805164253365356}
-  laserDistance: 20
-  laserMask:
-    serializedVersion: 2
-    m_Bits: 1
-  damage: 1
+  InitialMaxHP: 100
+  DeathEvent: {fileID: 11400000, guid: d08d7919f9c453f42845e86a210a19ac, type: 2}
 --- !u!114 &114291611978839956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -317,13 +308,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1092932770824846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c188cf4d984204bb180a27c9b19c5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d22af66e25ee9244a78b244437a14c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   abilities:
-  - {fileID: 11400000, guid: a4e9d95c03ac3f344bdc554255835b8a, type: 2}
-  - {fileID: 11400000, guid: 3b1b841cef868b8469ddc644f3e3824a, type: 2}
-  - {fileID: 11400000, guid: 01ab1c97dc447f04c92f3c192b553a84, type: 2}
+  - {fileID: 11400000, guid: f120c1d2ef4353746a1aec37cb046c18, type: 2}
+  - {fileID: 11400000, guid: 37e07c6c9fbb9d34c91e300a6792f864, type: 2}
+  - {fileID: 11400000, guid: 6d63e18ded4f2b040b8478e7852f9b02, type: 2}
 --- !u!114 &114585005625069962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -332,7 +323,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1092932770824846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 429f120c4ebb8da478c40d5fcb6919af, type: 3}
+  m_Script: {fileID: 11500000, guid: 64ed877fa9826984d99d296866af8c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 6
@@ -349,11 +340,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1092932770824846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 872d5d994a2505348a47f3979a79cc45, type: 3}
+  m_Script: {fileID: 11500000, guid: a7c154a270be3c44eaacbe92129d2868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialMaxHP: 100
-  DeathEvent: {fileID: 11400000, guid: b6c4cb75e76a2f04ea23a4149e1a7d4a, type: 2}
+  lasers:
+  - eye: {fileID: 4487749890983498}
+    renderer: {fileID: 120838326506894078}
+  - eye: {fileID: 4291936990375666}
+    renderer: {fileID: 120805164253365356}
+  laserDistance: 20
+  laserMask:
+    serializedVersion: 2
+    m_Bits: 1
+  damage: 1
 --- !u!120 &120805164253365356
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -368,7 +367,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: a51e2091a2cd61846967ed04a7dbe85b, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -456,7 +455,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: a51e2091a2cd61846967ed04a7dbe85b, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
