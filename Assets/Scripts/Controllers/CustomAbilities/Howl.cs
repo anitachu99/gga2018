@@ -37,7 +37,9 @@ namespace boc {
 
 					if (abilityTimer <= 0f) {
 						health.Heal (amountToHeal);
-						cooldownTimer -= cooldown;
+						cooldownTimer = cooldown;
+
+						currentStage = AbilityStage.Cooldown;
 					}
 					break;
 

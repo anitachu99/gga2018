@@ -18,5 +18,9 @@ namespace boc {
 
 		protected AbilityStage currentStage;
 
+		private void OnEnable () {
+			currentStage = AbilityStage.Idle;
+		}
+
 	}
 }
