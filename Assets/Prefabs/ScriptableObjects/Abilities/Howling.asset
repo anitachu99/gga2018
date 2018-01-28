@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 723188166e31f024592d412d04441b51, type: 3}
   m_Name: Howling
   m_EditorClassIdentifier: 
-  amountToHeal: 30
-  howlingSound: {fileID: 8300000, guid: 6359e0c6cc8163b4ab38dd072242620e, type: 3}
+  duration: 0
   cooldown: 3
+  amountToHeal: 30
+  howlingSound: {fileID: 8300000, guid: f2976fdd8f0c7ce4093d398903c1ca24, type: 3}
   abilitykey: 372
