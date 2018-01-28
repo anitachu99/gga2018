@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialMaxHP: 100
-  DeathEvent: {fileID: 0}
+  DeathEvent: {fileID: 11400000, guid: b6c4cb75e76a2f04ea23a4149e1a7d4a, type: 2}
 --- !u!120 &120805164253365356
 LineRenderer:
   m_ObjectHideFlags: 1
