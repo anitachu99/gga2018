@@ -12,7 +12,7 @@ namespace boc {
 
 		public override void OnInspectorGUI () {
 			base.OnInspectorGUI ();
-			if (GUILayout.Button ("CLick me")) {
+			if (GUILayout.Button ("Invoke this event")) {
 				ge.Invoke ();
 			}
 		}
