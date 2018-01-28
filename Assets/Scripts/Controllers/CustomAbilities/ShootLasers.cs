@@ -3,26 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace boc {
-	[CreateAssetMenu (menuName = "ScriptableObjects/abilities/speedboost")]
-	public class SpeedBoost : CooldownAbility {
-		[SerializeField]
-		private float speedmultiplier = 5;
+	[CreateAssetMenu (menuName = "ScriptableObjects/abilities/Shoot Lasers")]
+	public class ShootLasers : CooldownAbility {
 		[SerializeField]
 		private KeyCode abilityKey;
 
-		private float oldspeed;
-		private PlayerController controller;
+		private LaserEyes laserEyes;
 
 		public override void OnAbilityStart (GameObject player) {
-			controller = player.GetComponent<PlayerController> ();
+			laserEyes = player.GetComponent<LaserEyes> ();
 		}
 
 		public override void OnAbilityUpdate (GameObject player) {
 			switch (currentStage) {
 				case AbilityStage.Idle:
 					if (Input.GetKeyDown (abilityKey)) {
-						oldspeed = controller.Speed;
-						controller.Speed = oldspeed * speedmultiplier;
+						laserEyes.ActivateLasers ();
+
 						abilityTimer = duration;
 						currentStage = AbilityStage.Active;
 					}
@@ -32,7 +29,8 @@ namespace boc {
 					abilityTimer -= Time.deltaTime;
 
 					if (abilityTimer <= 0) {
-						controller.Speed = oldspeed;
+						laserEyes.DeactivateLasers ();
+
 						cooldownTimer = cooldown;
 						currentStage = AbilityStage.Cooldown;
 
