@@ -51,10 +51,10 @@ namespace boc {
 		void Update () {
 			if (Input.GetKeyUp ("s") && BossHealth.CurrentHP > 0) {
 				// Stop the previous lerp. Update the health and start a new lerp.
-				BossHealth.Damage (3);
-				
+				BossHealth.Damage (10);
+
 				StopCoroutine ("LerpHealth");
-				if (BossHealth.CurrentHP > 0 &&	BossHealth.CurrentHP < (ColorIndex - 1) * OneBarHP) {
+				if (BossHealth.CurrentHP > 0 && BossHealth.CurrentHP < (ColorIndex - 1) * OneBarHP) {
 					// Update the foreground and background hp bar colors.
 					ColorIndex--;
 					ForegroundBar.color = BarColors[ColorIndex];
