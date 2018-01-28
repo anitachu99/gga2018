@@ -64,10 +64,9 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+# Others
+.vscode/*
+Assets/Tests*
 
 # End of https://www.gitignore.io/api/macos,unity
 
-# Others
-.vscode/
-Assets/Tests/
-Assets/Tests.meta
