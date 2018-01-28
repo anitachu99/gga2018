@@ -13,7 +13,7 @@ namespace boc {
 		[SerializeField]
 		private float damage = 1f;
 
-		private bool isFiring = true;
+		private bool isFiring;
 
 		[System.Serializable]
 		public struct Laser {
@@ -39,17 +39,17 @@ namespace boc {
 						laser.renderer.SetPosition (1, hit.point);
 					} else {
 						laser.renderer.SetPosition (1, (laser.eye.position + laser.eye.forward * 100f));
-						}
 					}
 				}
 			}
+		}
 
-			public void ActivateLasers () {
-				isFiring = true;
-			}
+		public void ActivateLasers () {
+			isFiring = true;
+		}
 
-			public void DeactivateLasers () {
-				isFiring = false;
-			}
+		public void DeactivateLasers () {
+			isFiring = false;
 		}
 	}
+}
